@@ -6,9 +6,10 @@ let deployer
 let mockV3Aggregator
 let a
 
-deployer = getNamedAccounts()
-    .deployer // get accounts from hardhat.config
-    .then((a = 4), console.log(deployer), console.log(`ais ${a}`))
-// await deployments.fixture(["all"]) //deploys from deploy folder with all the files havin all tags
-// fundMe = await ethers.getContract("FundMe", deployer) //Gets the fundme deployed contract
-// mockV3Aggregator = await ethers.getContract("MockV3Aggregator", deployer)
+async function main() {
+    a = 4
+    console.log(`a is ${a}`)
+    deployer = (await getNamedAccounts()).deployer
+    console.log(`deployer is ${deployer}`)
+}
+main()

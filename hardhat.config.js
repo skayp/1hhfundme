@@ -1,10 +1,11 @@
-// require("@nomiclabs/hardhat-waffle")
+//require("@nomiclabs/hardhat-waffle")
 require("hardhat-gas-reporter")
 //require("@nomiclabs/hardhat-ethers")
 require("@nomiclabs/hardhat-etherscan")
 require("dotenv").config()
 require("solidity-coverage")
 require("hardhat-deploy")
+require("@nomicfoundation/hardhat-toolbox")
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || ""
 const SEPOLIA_RPC_URL =
@@ -45,11 +46,12 @@ module.exports = {
         // customChains: [], // uncomment this line if you are getting a TypeError: customChains is not iterable
     },
     gasReporter: {
-        enabled: false,
+        enabled: true,
         currency: "USD",
         outputFile: "gas-report.txt",
         noColors: true,
         // coinmarketcap: COINMARKETCAP_API_KEY,
+        token: "MATIC",
     },
     namedAccounts: {
         deployer: {

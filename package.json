@@ -1,4 +1,7 @@
-{
+{ "name":"hhfundMe",
+  "author": "skayp",
+  "version": "1.0.0",
+
   "devDependencies": {
     "@chainlink/contracts": "^0.6.1",
     "@ethersproject/abi": "^5.4.7",
@@ -21,5 +24,16 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3"
+  },
+  "scripts":{
+    "test":"yarn hardhat test",
+    "test:satging":"yarn hardhat test --network sepolia",
+    "lint":"yarn solhint 'contracts/*.sol'",
+    "lint:fix":"yarn solhint 'contracts/*.sol'--fix",
+    "format":"yarn prettier --write .",
+    "coverage":"yarn hardhat coverage"
+
+    
+
   }
 }
