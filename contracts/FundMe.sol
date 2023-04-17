@@ -9,9 +9,9 @@ import "./PriceConverter.sol";
 error FundMeisNotOwner();
 
 /**@title A sample Funding Contract
- * @author Patrick Collins
- * @notice This contract is for creating a sample funding contract
- * @dev This implements price feeds as our library
+ * @author Shashi Kant PAndey
+ * @notice This Contract accepts funds and only deployer can withdraw
+ * @dev Price feeds as our library
  */
 contract FundMe {
     // Type Declarations
@@ -24,7 +24,7 @@ contract FundMe {
     mapping(address => uint256) private s_addressToAmountFunded;
     AggregatorV3Interface private s_priceFeed;
 
-    // Events (we have none!)
+    // Events (no events currently)
 
     // Modifiers
     modifier onlyOwner() {
